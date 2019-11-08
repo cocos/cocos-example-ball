@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "b52041a0-41a0-4336-a32d-39d238283265",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/game/camera-ctrl.ts",
+    "importAsPlugin": false
+  }
+}

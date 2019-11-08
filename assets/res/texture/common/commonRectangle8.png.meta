@@ -1,0 +1,56 @@
+{
+  "ver": "1.0.16",
+  "importer": "image",
+  "imported": true,
+  "uuid": "72b18307-3fd6-4639-a9ec-eccfb57021dc",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "f9941": {
+      "ver": "1.0.7",
+      "importer": "sprite-frame",
+      "uuid": "72b18307-3fd6-4639-a9ec-eccfb57021dc@f9941",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 2.5,
+        "trimX": 0,
+        "trimY": 1,
+        "width": 400,
+        "height": 53,
+        "rawWidth": 400,
+        "rawHeight": 60,
+        "borderTop": 25,
+        "borderBottom": 27,
+        "borderLeft": 61,
+        "borderRight": 59,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "72b18307-3fd6-4639-a9ec-eccfb57021dc",
+        "atlasUuid": ""
+      },
+      "displayName": "commonRectangle8",
+      "id": "f9941",
+      "name": "spriteFrame"
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "redirect": "72b18307-3fd6-4639-a9ec-eccfb57021dc@f9941"
+  }
+}

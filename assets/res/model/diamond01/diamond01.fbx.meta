@@ -1,0 +1,111 @@
+{
+  "ver": "1.3.8",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "eb63a17d-58c5-4549-9483-59ee9e290d4e",
+  "files": [],
+  "subMetas": {
+    "684db": {
+      "ver": "1.0.7",
+      "importer": "gltf-mesh",
+      "name": "Cylinder002.mesh",
+      "id": "684db",
+      "displayName": "",
+      "uuid": "eb63a17d-58c5-4549-9483-59ee9e290d4e@684db",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "df7df": {
+      "ver": "1.0.2",
+      "importer": "gltf-embeded-image",
+      "name": "贴图 #1.image",
+      "id": "df7df",
+      "uuid": "eb63a17d-58c5-4549-9483-59ee9e290d4e@df7df",
+      "displayName": "",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "a96a6": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "name": "贴图 #1.texture",
+      "id": "a96a6",
+      "displayName": "",
+      "uuid": "eb63a17d-58c5-4549-9483-59ee9e290d4e@a96a6",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/diamond01.jpg"
+      }
+    },
+    "a66d0": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "name": "diamond01.prefab",
+      "id": "a66d0",
+      "displayName": "",
+      "uuid": "eb63a17d-58c5-4549-9483-59ee9e290d4e@a66d0",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "normals": 0,
+    "tangents": 1,
+    "dumpMaterials": true,
+    "redirect": "eb63a17d-58c5-4549-9483-59ee9e290d4e@a66d0",
+    "assetFinder": {
+      "meshes": [
+        "eb63a17d-58c5-4549-9483-59ee9e290d4e@684db"
+      ],
+      "textures": [
+        "eb63a17d-58c5-4549-9483-59ee9e290d4e@a96a6"
+      ],
+      "materials": [
+        "2bc2cdeb-90e0-42e3-8628-f89fe926e26f"
+      ],
+      "scenes": [
+        "eb63a17d-58c5-4549-9483-59ee9e290d4e@a66d0"
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "贴图 #1",
+        "remap": "db://assets/diamond01.jpg",
+        "uri": "eb63a17d-58c5-4549-9483-59ee9e290d4e@df7df"
+      }
+    ]
+  }
+}

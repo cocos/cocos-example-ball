@@ -1,0 +1,126 @@
+{
+  "ver": "1.3.8",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d",
+  "files": [],
+  "subMetas": {
+    "f9d4d": {
+      "ver": "1.0.7",
+      "importer": "gltf-mesh",
+      "name": "Spring01.mesh",
+      "id": "f9d4d",
+      "displayName": "",
+      "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@f9d4d",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "3a293": {
+      "ver": "1.0.2",
+      "importer": "gltf-embeded-image",
+      "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@3a293",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d/out/spring01.jpg"
+      },
+      "displayName": "",
+      "id": "3a293",
+      "name": "spring01.jpg.image"
+    },
+    "3efb2": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "name": "贴图 #0.texture",
+      "id": "3efb2",
+      "displayName": "",
+      "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@3efb2",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@3a293"
+      }
+    },
+    "5c895": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "name": "Material #2.material",
+      "id": "5c895",
+      "displayName": "",
+      "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@5c895",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "c49c6": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "name": "spring01.FBX.prefab",
+      "id": "c49c6",
+      "displayName": "",
+      "uuid": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@c49c6",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "normals": 2,
+    "tangents": 2,
+    "dumpMaterials": false,
+    "redirect": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@c49c6",
+    "assetFinder": {
+      "meshes": [
+        "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@f9d4d"
+      ],
+      "textures": [
+        "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@3efb2"
+      ],
+      "materials": [
+        "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@5c895"
+      ],
+      "scenes": [
+        "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@c49c6"
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "spring01.jpg",
+        "uri": "a52a7b0d-a9ff-4b77-9207-f048c0ee4c4d@3a293"
+      }
+    ]
+  }
+}

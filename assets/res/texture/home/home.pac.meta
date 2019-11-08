@@ -1,0 +1,25 @@
+{
+  "ver": "1.0.1",
+  "importer": "auto-atlas",
+  "imported": true,
+  "uuid": "00f88bb4-a6aa-4194-875f-cee9a142af89",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "maxWidth": 1024,
+    "maxHeight": 1024,
+    "padding": 2,
+    "allowRotation": true,
+    "forceSquared": false,
+    "powerOfTwo": false,
+    "algorithm": "MaxRects",
+    "format": "png",
+    "quality": 80,
+    "contourBleed": true,
+    "paddingBleed": true,
+    "filterUnused": false,
+    "platformSettings": {}
+  }
+}

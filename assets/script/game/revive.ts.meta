@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "37e87470-2d7b-40e4-bc06-9fa66eab8f2e",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/game/revive.ts",
+    "importAsPlugin": false
+  }
+}

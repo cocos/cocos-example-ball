@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "4becf504-7ded-42da-9aca-ee1f33c4dbf3",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/game/ui-manager.ts",
+    "importAsPlugin": false
+  }
+}

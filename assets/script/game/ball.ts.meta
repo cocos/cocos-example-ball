@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "900c8a50-f35b-4272-b6d1-76f8bd4b14c1",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/game/ball.ts",
+    "importAsPlugin": false
+  }
+}

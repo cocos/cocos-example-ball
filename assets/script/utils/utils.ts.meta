@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "dddceff6-6bfb-4e48-b522-44a34c01055d",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/utils/utils.ts",
+    "importAsPlugin": false
+  }
+}

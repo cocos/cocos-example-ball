@@ -1,0 +1,14 @@
+{
+  "ver": "1.0.844",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "bb50a2dc-4e5d-456e-907b-1f2d07fc34fd",
+  "files": [
+    ".js"
+  ],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/game/board.ts",
+    "importAsPlugin": false
+  }
+}

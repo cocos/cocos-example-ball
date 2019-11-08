@@ -1,0 +1,56 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "diamond01",
+  "_objFlags": 0,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveDatas": {
+    "/": {
+      "props": {
+        "rotation": {
+          "keys": 0,
+          "values": [
+            {
+              "__type__": "cc.Quat",
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "w": 1
+            },
+            {
+              "__type__": "cc.Quat",
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "w": 6.123233995736766e-17
+            },
+            {
+              "__type__": "cc.Quat",
+              "x": 0,
+              "y": -0.0008726645152351496,
+              "z": 0,
+              "w": 0.9999996192282494
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "events": [],
+  "_duration": 3.033333333333333,
+  "_keys": [
+    [
+      0,
+      1.4,
+      3.033333333333333
+    ]
+  ],
+  "_stepness": 0
+}

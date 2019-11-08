@@ -1,0 +1,126 @@
+{
+  "ver": "1.3.8",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be",
+  "files": [],
+  "subMetas": {
+    "c6160": {
+      "ver": "1.0.7",
+      "importer": "gltf-mesh",
+      "name": "Cylinder001.mesh",
+      "id": "c6160",
+      "displayName": "",
+      "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be@c6160",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "1cd92": {
+      "ver": "1.0.2",
+      "importer": "gltf-embeded-image",
+      "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be@1cd92",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-85ad4e21-18e6-4ac3-bafe-970a060786be/out/plate01.jpg"
+      },
+      "displayName": "",
+      "id": "1cd92",
+      "name": "plate01.jpg.image"
+    },
+    "bfae8": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "name": "贴图 #3.texture",
+      "id": "bfae8",
+      "displayName": "",
+      "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be@bfae8",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "85ad4e21-18e6-4ac3-bafe-970a060786be@1cd92"
+      }
+    },
+    "fe5ee": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "name": "Material #5.material",
+      "id": "fe5ee",
+      "displayName": "",
+      "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be@fe5ee",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "49f97": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "name": "plate01.FBX.prefab",
+      "id": "49f97",
+      "displayName": "",
+      "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be@49f97",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "normals": 2,
+    "tangents": 2,
+    "dumpMaterials": false,
+    "redirect": "85ad4e21-18e6-4ac3-bafe-970a060786be@49f97",
+    "assetFinder": {
+      "meshes": [
+        "85ad4e21-18e6-4ac3-bafe-970a060786be@c6160"
+      ],
+      "textures": [
+        "85ad4e21-18e6-4ac3-bafe-970a060786be@bfae8"
+      ],
+      "materials": [
+        "85ad4e21-18e6-4ac3-bafe-970a060786be@fe5ee"
+      ],
+      "scenes": [
+        "85ad4e21-18e6-4ac3-bafe-970a060786be@49f97"
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "plate01.jpg",
+        "uri": "85ad4e21-18e6-4ac3-bafe-970a060786be@1cd92"
+      }
+    ]
+  }
+}
