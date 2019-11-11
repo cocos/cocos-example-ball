@@ -51,12 +51,11 @@ export class Revive extends Component {
         this.currentTime = 0;
         this.spCountDown.fillRange = 1;
         this.isCountDowning = true;
-
-        this.wgMenu.bottom = 350;
     }
 
     onBtnReviveClick() {
         this.isCountDowning = false;
+        Constants.game.audioManager.playClip();
 
         Constants.game.node.emit(Constants.GAME_EVENT.REVIVE);
         this.pageResult.showResult(false);
@@ -64,6 +63,7 @@ export class Revive extends Component {
     }
 
     onBtnSkipClick() {
+        Constants.game.audioManager.playClip();
         this.isCountDowning = false;
         // uiManager.instance.hideDialog('fight/revive');
 

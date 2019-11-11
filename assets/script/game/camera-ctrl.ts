@@ -16,10 +16,6 @@ export class CameraCtrl extends Component {
     preType = Constants.BOARD_TYPE.NORMAL;
     _originPos = new Vec3();
 
-    onLoad(){
-        Constants.game.cameraCtrl = this;
-    }
-
     start () {
         this._originPos.set(Constants.CAMERA_INIT_POS);
         this.setPosition(this._originPos);

@@ -9,6 +9,7 @@ import { utils } from "../utils/utils";
 const { ccclass, property } = _decorator;
 
 const _tempPos = new Vec3();
+const _diamondPos = new Vec3();
 
 @ccclass("BoardManager")
 export class BoardManager extends Component {
@@ -21,10 +22,6 @@ export class BoardManager extends Component {
     diamondCenterX = 0; // 钻石摆放中心位置
     _boardList: Board[] = []; // 跳板列表
     _boardInsIdx = 0; // 当前实例编号
-
-    onLoad(){
-        Constants.game.boardManager = this;
-    }
 
     start () {
         this.initBoard();
@@ -120,17 +117,16 @@ export class BoardManager extends Component {
 
         for (let i = 0; i < Constants.DIAMOND_NUM; i++) {
             this.setNextDiamondPos(position);
-            console.log('diamond pos init: '+position.toString());
             this.diamondSprintList[i].setPosition(position);
             this.diamondSprintList[i].active = true;
         }
     }
 
     newDiamond() {
-        const pos = this.diamondSprintList[Constants.DIAMOND_NUM - 1].position.clone();
-        this.setNextDiamondPos(pos);
+        _diamondPos.set(this.diamondSprintList[Constants.DIAMOND_NUM - 1].position);
+        this.setNextDiamondPos(_diamondPos);
         const node = this.diamondSprintList.shift();
-        node.setPosition(pos);
+        node.setPosition(_diamondPos);
         node.active = true;
         this.diamondSprintList.push(node);
     }

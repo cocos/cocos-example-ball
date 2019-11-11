@@ -7,5 +7,6 @@ export class PageStart extends Component {
 
     gameStart(){
         Constants.game.node.emit(Constants.GAME_EVENT.RESTART);
+        Constants.game.audioManager.playClip();
     }
 }

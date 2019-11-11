@@ -92,11 +92,25 @@ export class Board extends Component {
             this.node.setScale(this.originScale);
         }
 
+        this.springTop.active = false;
+        if (this.type === Constants.BOARD_TYPE.SPRING) {
+            this.springHelix.active = true;
+            this.springTop.active = true;
+            this.setSpringPos();
+        }
+
+        if (this.type === Constants.BOARD_TYPE.SPRINT) {
+            this.springHelix.active = true;
+            this.springTop.active = true;
+            this.setSpringPos();
+        }
+
         this.hasDiamond = false;
         if (this.diamondList[0]) {
             for (let i = 0; i < 5; i++) {
                 this.diamondList[i].active = false;
             }
+
             if (this.type === Constants.BOARD_TYPE.GIANT) {
                 for (let i = 0; i < 5; i++) {
                     this.diamondList[i].active = true;
@@ -169,14 +183,16 @@ export class Board extends Component {
             for (let i = 0; i < 5; i++) {
                 if (this.diamondList[i].active) {
                     flag = false;
-                    if (Math.abs(x - this.diamondList[i].getPosition().x) <= Constants.DIAMOND_SCORE_AREA) {
+                    if (Math.abs(x - this.diamondList[i].position.x) <= Constants.DIAMOND_SCORE_AREA) {
                         Constants.game.ball.playDiamondParticle(this.diamondList[i].position);
                         this.hideDiamond(i);
                         Constants.game.addScore(Constants.DIAMOND_SCORE);
                     }
                 }
             }
-            if (flag) this.hasDiamond = false;
+            if (flag) {
+                this.hasDiamond = false;
+            }
         }
     }
 

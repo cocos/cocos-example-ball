@@ -11,9 +11,6 @@
     "6c48a": {
       "ver": "1.0.19",
       "importer": "texture",
-      "name": "texture",
-      "id": "6c48a",
-      "displayName": "ballGreen01",
       "uuid": "1f9f963f-2c0b-4762-ab97-fb87498b9bc4@6c48a",
       "imported": true,
       "files": [
@@ -30,7 +27,10 @@
         "anisotropy": 1,
         "isUuid": true,
         "imageUuidOrDatabaseUri": "1f9f963f-2c0b-4762-ab97-fb87498b9bc4"
-      }
+      },
+      "displayName": "ballGreen01",
+      "id": "6c48a",
+      "name": "texture"
     }
   },
   "userData": {

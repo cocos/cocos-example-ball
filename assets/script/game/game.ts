@@ -9,6 +9,7 @@ import { Ball } from "./ball";
 import { BoardManager } from "./board-manager";
 import { CameraCtrl } from "./camera-ctrl";
 import { UIManager } from "./ui-manager";
+import { AudioManager } from "./audio-manager";
 const { ccclass, property } = _decorator;
 
 /**
@@ -18,14 +19,18 @@ const { ccclass, property } = _decorator;
 export class Game extends Component {
     @property(Prefab)
     ballPref: Prefab = null;
+    @property(BoardManager)
+    boardManager: BoardManager = null;
+    @property(CameraCtrl)
+    cameraCtrl: CameraCtrl = null;
+    @property(UIManager)
+    uiManager: UIManager = null;
+    @property(AudioManager)
+    audioManager: AudioManager = null;
 
     get ball(){
         return this._ball;
     }
-
-    boardManager: BoardManager = null;
-    cameraCtrl: CameraCtrl = null;
-    uiManager: UIManager = null;
 
     state = Constants.GAME_STATE.READY;
     score = 0;
@@ -67,6 +72,7 @@ export class Game extends Component {
     }
 
     gameStart(){
+        this.audioManager.playSound();
         this.uiManager.showDialog(false);
         this.state = Constants.GAME_STATE.PLAYING;
         this.hasRevive = false;
@@ -74,7 +80,7 @@ export class Game extends Component {
     }
 
     gameDie(){
-        // audioManager.instance.stop(constants.AUDIO_MUSIC.BACKGROUND);
+        this.audioManager.playSound(false);
         this.state = Constants.GAME_STATE.PAUSE;
 
         if (!this.hasRevive) {
@@ -88,7 +94,7 @@ export class Game extends Component {
 
     gameOver() {
         this.state = Constants.GAME_STATE.OVER;
-        // audioManager.instance.stop(constants.AUDIO_MUSIC.BACKGROUND);
+        this.audioManager.playSound(false);
 
         this.resetGame();
     }
@@ -98,7 +104,7 @@ export class Game extends Component {
         this.state = Constants.GAME_STATE.READY;
         this.ball.revive();
         this.scheduleOnce(() => {
-            // audioManager.instance.playMusic(constants.AUDIO_MUSIC.BACKGROUND, true);
+            this.audioManager.playSound();
             this.state = Constants.GAME_STATE.PLAYING;
         }, 1);
     }

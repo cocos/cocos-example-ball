@@ -8,7 +8,7 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-import { _decorator, Prefab, Node } from "cc";
+import { _decorator, Prefab, Node, instantiate, NodePool } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PoolManager")
@@ -40,14 +40,14 @@ export class PoolManager {
             if (pool.size() > 0) {
                 node = pool.get();
             } else {
-                node = cc.instantiate(prefab);
+                node = instantiate(prefab);
             }
         } else {
             //没有对应对象池，创建他！
-            let pool = new cc.NodePool();
+            let pool = new NodePool();
             this.dictPool[name] = pool;
 
-            node = cc.instantiate(prefab);
+            node = instantiate(prefab);
         }
 
         node.parent = parent;
