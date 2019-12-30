@@ -1,14 +1,15 @@
 {
-  "ver": "1.0.844",
+  "ver": "2.0.13",
   "importer": "typescript",
   "imported": true,
   "uuid": "0256654d-d0f8-4df2-8ecd-a998345b216c",
   "files": [
-    ".js"
+    ".js",
+    ".trans"
   ],
   "subMetas": {},
   "userData": {
-    "moduleId": "project:///assets/script/game/update-value-label.ts",
-    "importAsPlugin": false
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/update-value-label.js"
   }
 }

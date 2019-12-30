@@ -1,14 +1,15 @@
 {
-  "ver": "1.0.844",
+  "ver": "2.0.13",
   "importer": "typescript",
   "imported": true,
   "uuid": "52ff6420-d0c9-4969-a529-2cd4b51cf4c9",
   "files": [
-    ".js"
+    ".js",
+    ".trans"
   ],
   "subMetas": {},
   "userData": {
-    "moduleId": "project:///assets/script/game/audio-manager.ts",
-    "importAsPlugin": false
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/game/audio-manager.js"
   }
 }

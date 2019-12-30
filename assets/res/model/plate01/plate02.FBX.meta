@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.8",
+  "ver": "1.3.16",
   "importer": "fbx",
   "imported": true,
   "uuid": "b4abfee9-978f-4790-b2f7-4104d4fdf862",
@@ -33,7 +33,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-b4abfee9-978f-4790-b2f7-4104d4fdf862/out/plate01.jpg"
+        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-b4abfee9-978f-4790-b2f7-4104d4fdf862/out/plate01.jpg",
+        "gltfIndex": 0
       },
       "displayName": "",
       "id": "1cd92",
@@ -64,7 +65,7 @@
       }
     },
     "a47c6": {
-      "ver": "1.0.10",
+      "ver": "1.0.12",
       "importer": "gltf-material",
       "name": "Material #6.material",
       "id": "a47c6",

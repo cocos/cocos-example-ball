@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.8",
+  "ver": "1.3.16",
   "importer": "fbx",
   "imported": true,
   "uuid": "85ad4e21-18e6-4ac3-bafe-970a060786be",
@@ -33,7 +33,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-85ad4e21-18e6-4ac3-bafe-970a060786be/out/plate01.jpg"
+        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-85ad4e21-18e6-4ac3-bafe-970a060786be/out/plate01.jpg",
+        "gltfIndex": 0
       },
       "displayName": "",
       "id": "1cd92",
@@ -64,7 +65,7 @@
       }
     },
     "fe5ee": {
-      "ver": "1.0.10",
+      "ver": "1.0.12",
       "importer": "gltf-material",
       "name": "Material #5.material",
       "id": "fe5ee",

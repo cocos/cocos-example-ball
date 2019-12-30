@@ -291,8 +291,8 @@ export class Ball extends Component {
         const node = PoolManager.instance.getNode(this.scoreAniPrefab, cc.find('Canvas/resultUI'));
         const pos = new Vec3();
         const cameraComp = Constants.game.cameraCtrl.node.getComponent(CameraComponent);
-        this.node.getWorldPosition(this._wpos);
-        cc.pipelineUtils.WorldNode3DToLocalNodeUI(cameraComp, this._wpos, cc.find('Canvas/resultUI'), pos);
+        this._wpos.set(this.node.worldPosition);
+        cameraComp.convertToUINode(this._wpos, cc.find('Canvas/resultUI'), pos);
 
         pos.x += 50;
         node.setPosition(pos);

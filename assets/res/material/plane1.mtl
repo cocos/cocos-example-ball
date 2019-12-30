@@ -9,7 +9,10 @@
   "_techIdx": 0,
   "_defines": [
     {
-      "USE_ALBEDO_MAP": true
+      "USE_ALBEDO_MAP": true,
+      "OCCLUSION_CHANNEL": "b",
+      "ROUGHNESS_CHANNEL": "r",
+      "METALLIC_CHANNEL": "g"
     }
   ],
   "_states": [
@@ -25,7 +28,7 @@
   ],
   "_props": [
     {
-      "albedoMap": {
+      "mainTexture": {
         "__uuid__": "0aeb0da9-3705-44e0-bc33-f5dcf0b03664@6c48a"
       }
     }

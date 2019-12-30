@@ -1,14 +1,15 @@
 {
-  "ver": "1.0.844",
+  "ver": "2.0.13",
   "importer": "typescript",
   "imported": true,
   "uuid": "d9bbff11-3716-4ffe-a1c0-cc22a39a9227",
   "files": [
-    ".js"
+    ".js",
+    ".trans"
   ],
   "subMetas": {},
   "userData": {
-    "moduleId": "project:///assets/script/data/constants.ts",
-    "importAsPlugin": false
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/script/data/constants.js"
   }
 }

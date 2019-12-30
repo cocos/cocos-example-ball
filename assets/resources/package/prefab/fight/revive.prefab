@@ -144,7 +144,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -154,7 +155,6 @@
       "__id__": 2
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -354,7 +354,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -364,7 +365,6 @@
       "__id__": 8
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -483,7 +483,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -493,7 +494,6 @@
       "__id__": 12
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 4,
     "_color": {
@@ -660,7 +660,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -670,7 +671,6 @@
       "__id__": 7
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -939,7 +939,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -949,7 +950,6 @@
       "__id__": 28
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1059,7 +1059,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -1069,7 +1070,6 @@
       "__id__": 32
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1182,7 +1182,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -1192,7 +1193,6 @@
       "__id__": 36
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1355,7 +1355,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -1365,7 +1366,6 @@
       "__id__": 43
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1529,7 +1529,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -1539,7 +1540,6 @@
       "__id__": 48
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1648,7 +1648,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.LabelComponent",
@@ -1658,7 +1659,6 @@
       "__id__": 52
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -1720,7 +1720,8 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": ""
+    "_id": "",
+    "_priority": 0
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -1730,7 +1731,6 @@
       "__id__": 47
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {

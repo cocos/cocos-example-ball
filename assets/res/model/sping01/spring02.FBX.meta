@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.8",
+  "ver": "1.3.16",
   "importer": "fbx",
   "imported": true,
   "uuid": "a0abcfcb-adf3-4c02-bc7c-955ea4d8d7aa",
@@ -33,7 +33,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-a0abcfcb-adf3-4c02-bc7c-955ea4d8d7aa/out/spring01.jpg"
+        "externalURI": "file:///Users/cocos/JonePs/yaji-project/demo-ball/temp/asset-db/assets/fbx2gltf-a0abcfcb-adf3-4c02-bc7c-955ea4d8d7aa/out/spring01.jpg",
+        "gltfIndex": 0
       },
       "displayName": "",
       "id": "3a293",
@@ -64,7 +65,7 @@
       }
     },
     "5c895": {
-      "ver": "1.0.10",
+      "ver": "1.0.12",
       "importer": "gltf-material",
       "name": "Material #2.material",
       "id": "5c895",

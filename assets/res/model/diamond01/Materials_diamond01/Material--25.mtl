@@ -49,7 +49,12 @@
         "z": 1,
         "w": 1
       },
-      "albedoMap": {
+      "alphaThreshold": 1,
+      "occlusion": 1,
+      "roughness": 1,
+      "metallic": 1,
+      "normalStrenth": 1,
+      "mainTexture": {
         "__uuid__": "eb63a17d-58c5-4549-9483-59ee9e290d4e@a96a6"
       }
     }
