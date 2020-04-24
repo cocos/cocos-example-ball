@@ -6,7 +6,7 @@
   "files": [],
   "subMetas": {
     "f9d4d": {
-      "ver": "1.0.7",
+      "ver": "1.0.8",
       "importer": "gltf-mesh",
       "name": "Spring01.mesh",
       "id": "f9d4d",
@@ -81,7 +81,7 @@
       }
     },
     "c49c6": {
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "importer": "gltf-scene",
       "name": "spring01.FBX.prefab",
       "id": "c49c6",

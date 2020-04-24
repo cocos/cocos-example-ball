@@ -6,7 +6,7 @@
   "files": [],
   "subMetas": {
     "c6160": {
-      "ver": "1.0.7",
+      "ver": "1.0.8",
       "importer": "gltf-mesh",
       "name": "Cylinder001.mesh",
       "id": "c6160",
@@ -81,7 +81,7 @@
       }
     },
     "49f97": {
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "importer": "gltf-scene",
       "name": "plate01.FBX.prefab",
       "id": "49f97",

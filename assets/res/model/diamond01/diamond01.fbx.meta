@@ -6,7 +6,7 @@
   "files": [],
   "subMetas": {
     "684db": {
-      "ver": "1.0.7",
+      "ver": "1.0.8",
       "importer": "gltf-mesh",
       "name": "Cylinder002.mesh",
       "id": "684db",
@@ -59,12 +59,12 @@
         "mipfilter": "none",
         "premultiplyAlpha": false,
         "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/diamond01.jpg"
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "eb63a17d-58c5-4549-9483-59ee9e290d4e@df7df"
       }
     },
     "a66d0": {
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "importer": "gltf-scene",
       "name": "diamond01.prefab",
       "id": "a66d0",
@@ -103,7 +103,6 @@
     "imageMetas": [
       {
         "name": "贴图 #1",
-        "remap": "db://assets/diamond01.jpg",
         "uri": "eb63a17d-58c5-4549-9483-59ee9e290d4e@df7df"
       }
     ]

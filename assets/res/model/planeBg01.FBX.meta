@@ -6,7 +6,7 @@
   "files": [],
   "subMetas": {
     "b8a2d": {
-      "ver": "1.0.7",
+      "ver": "1.0.8",
       "importer": "gltf-mesh",
       "name": "Plane001.mesh",
       "id": "b8a2d",
@@ -80,7 +80,7 @@
       }
     },
     "c1479": {
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "importer": "gltf-scene",
       "name": "planeBg01.FBX.prefab",
       "id": "c1479",

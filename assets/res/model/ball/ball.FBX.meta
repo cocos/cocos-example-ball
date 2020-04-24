@@ -6,7 +6,7 @@
   "files": [],
   "subMetas": {
     "14177": {
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "importer": "gltf-scene",
       "name": "ball.FBX.prefab",
       "id": "14177",
@@ -22,7 +22,7 @@
       }
     },
     "fb329": {
-      "ver": "1.0.7",
+      "ver": "1.0.8",
       "importer": "gltf-mesh",
       "name": "Sphere001.mesh",
       "id": "fb329",
