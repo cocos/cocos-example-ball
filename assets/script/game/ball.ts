@@ -3,7 +3,7 @@
  * Copyright (c) 2019 Xiamen Yaji Software Co.Ltd. All rights reserved.
  * Created by daisy on 2019/06/25.
  */
-import { _decorator, Component, Node, Touch, EventTouch, Vec3, LabelComponent, Prefab, ParticleSystemComponent, ModelComponent, AnimationComponent, CameraComponent } from "cc";
+import { _decorator, Component, Node, Touch, EventTouch, Vec3, LabelComponent, Prefab, ParticleSystemComponent, ModelComponent, AnimationComponent, CameraComponent, ParticleUtils } from "cc";
 import { Constants } from "../data/constants";
 import { Board } from "./board";
 import { utils } from "../utils/utils";
@@ -48,19 +48,19 @@ export class Ball extends Component {
         Constants.game.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
         Constants.game.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         Constants.game.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
-
+        Constants.game.node.on(Constants.GAME_EVENT.RESTART, this.gameStart, this);
 
         // @ts-ignore
         // this.trailNode = PoolManager.instance.getNode(this.trail01Prefab, this.node.parent);
         this.updateBall();
         this.reset();
-        this.trailNode.active = false;
     }
 
     onDestroy() {
         Constants.game.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this);
         Constants.game.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         Constants.game.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        Constants.game.node.off(Constants.GAME_EVENT.RESTART, this.gameStart, this);
     }
 
     update(deltaTime: number) {
@@ -107,9 +107,7 @@ export class Ball extends Component {
                     // 超过当前跳板应该弹跳高度，开始下降
                     if (this.jumpState === Constants.BALL_JUMP_STATE.FALLDOWN) {
                         if (this.currJumpFrame > Constants.PLAYER_MAX_DOWN_FRAMES || this.currBoard.node.position.y - this.node.position.y > Constants.BOARD_GAP + Constants.BOARD_HEIGTH) {
-                            const part = this.trailNode.getComponentInChildren(ParticleSystemComponent);
-                            part.stop();
-                            part.node.active = false;
+                            ParticleUtils.stop(this.trailNode);
                             Constants.game.gameDie();
                             return;
                         }
@@ -169,6 +167,10 @@ export class Ball extends Component {
         this.isTouch = false;
     }
 
+    gameStart(){
+        this.playTrail();
+    }
+
     reset() {
         this.boardCount = 0;
         this.diffLevel = 1;
@@ -181,7 +183,6 @@ export class Ball extends Component {
         this.hasSprint = false;
         this.currBoardIdx = 0;
         this.show();
-        this.playTrail();
         this.setTrailPos();
     }
 
@@ -426,8 +427,7 @@ export class Ball extends Component {
     }
 
     playTrail(){
-        this.trailNode.active = true;
-        this.trailNode.getComponentInChildren(ParticleSystemComponent).play();
+        ParticleUtils.play(this.trailNode);
     }
 
     setTrailPos() {
