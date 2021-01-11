@@ -11,7 +11,7 @@ const _tempPos = new Vec3();
 @ccclass("CameraCtrl")
 export class CameraCtrl extends Component {
     @property(Node)
-    planeNode: Node = null;
+    planeNode: Node = null!;
 
     preType = Constants.BOARD_TYPE.NORMAL;
     _originPos = new Vec3();

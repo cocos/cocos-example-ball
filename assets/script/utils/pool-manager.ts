@@ -13,8 +13,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass("PoolManager")
 export class PoolManager {
-    dictPool = {}
-    dictPrefab = {}
+    dictPool: { [name: string]: NodePool } = {}
+    dictPrefab: { [name: string]: Prefab } = {}
 
     static _instance: PoolManager;
 
@@ -31,14 +31,14 @@ export class PoolManager {
      * 根据预设从对象池中获取对应节点
      */
     getNode (prefab: Prefab, parent: Node) {
-        let name = prefab.data.name;
+        let name = prefab.data.name as string;
         this.dictPrefab[name] = prefab;
-        let node: Node = null;
+        let node: Node = null!;
         if (this.dictPool.hasOwnProperty(name)) {
             //已有对应的对象池
             let pool = this.dictPool[name];
             if (pool.size() > 0) {
-                node = pool.get();
+                node = pool.get()!;
             } else {
                 node = instantiate(prefab);
             }
@@ -65,7 +65,7 @@ export class PoolManager {
             pool = this.dictPool[name];
         } else {
             //没有对应对象池，创建他！
-            pool = new cc.NodePool();
+            pool = new NodePool();
             this.dictPool[name] = pool;
         }
 

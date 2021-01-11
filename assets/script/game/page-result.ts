@@ -7,17 +7,17 @@ const { ccclass, property } = _decorator;
 @ccclass("PageResult")
 export class PageResult extends Component {
     @property({ type: UpdateValueLabel })
-    scoreLabel: UpdateValueLabel = null;
+    scoreLabel: UpdateValueLabel = null!;
     targetProgress: number = 0;
 
     @property(Node)
-    nodeTips1: Node = null;
+    nodeTips1: Node = null!;
 
     @property(Node)
-    nodeTips2: Node = null;
+    nodeTips2: Node = null!;
 
     @property(Node)
-    result: Node = null;
+    result: Node = null!;
 
     init() {
         this.targetProgress = 0;
@@ -37,7 +37,7 @@ export class PageResult extends Component {
     }
 
     start(){
-        const reviveComp = this.result.getComponent(Revive);
+        const reviveComp = this.result.getComponent(Revive)!;
         reviveComp.pageResult = this;
     }
 
@@ -52,7 +52,7 @@ export class PageResult extends Component {
         this.scoreLabel.playUpdateValue(curProgress, this.targetProgress, (this.targetProgress - curProgress) / 20);
     }
 
-    gameDie(cd){
+    gameDie(){
         this.showTips(false);
         this.showResult(true);
     }

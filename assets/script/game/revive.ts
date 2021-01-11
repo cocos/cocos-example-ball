@@ -1,4 +1,4 @@
-import { _decorator, Component, SpriteComponent, Node, WidgetComponent, LabelComponent } from "cc";
+import { _decorator, Component, SpriteComponent, Node, WidgetComponent, Label } from "cc";
 import { Constants } from "../data/constants";
 import { PageResult } from "./page-result";
 const { ccclass, property } = _decorator;
@@ -15,14 +15,14 @@ export class Revive extends Component {
     @property(WidgetComponent)
     wgMenu: WidgetComponent = null;
 
-    @property(LabelComponent)
-    historyLabel: LabelComponent = null;
+    @property(Label)
+    historyLabel: Label = null;
 
-    @property({ type: LabelComponent })
-    scoreLabel: LabelComponent = null;
+    @property({ type: Label })
+    scoreLabel: Label = null;
 
-    @property({ type: LabelComponent })
-    progressLabel: LabelComponent = null;
+    @property({ type: Label })
+    progressLabel: Label = null;
 
     @property(SpriteComponent)
     spCountDown: SpriteComponent = null;  //倒计时

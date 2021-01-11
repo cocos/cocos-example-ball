@@ -14,9 +14,9 @@ const _diamondPos = new Vec3();
 @ccclass("BoardManager")
 export class BoardManager extends Component {
     @property(Prefab)
-    boardPrefab: Prefab = null;
+    boardPrefab: Prefab = null!;
     @property(Prefab)
-    diamondPrefab: Prefab = null;
+    diamondPrefab: Prefab = null!;
 
     diamondSprintList: Node[] = []; // 钻石列表
     diamondCenterX = 0; // 钻石摆放中心位置
@@ -68,7 +68,7 @@ export class BoardManager extends Component {
     newBoard(newType: number, diffLevel: number) {
         const pos = this.getNextPos(this._boardList[Constants.BOARD_NUM - 1], diffLevel, _tempPos);
         const type = this._boardList[Constants.BOARD_NUM - 1].type;
-        const board = this._boardList.shift();
+        const board = this._boardList.shift()!;
         if (newType === Constants.BOARD_TYPE.SPRINT) {
             this.diamondCenterX = pos.x;
             this.setDiamond(pos);
@@ -125,7 +125,7 @@ export class BoardManager extends Component {
     newDiamond() {
         _diamondPos.set(this.diamondSprintList[Constants.DIAMOND_NUM - 1].position);
         this.setNextDiamondPos(_diamondPos);
-        const node = this.diamondSprintList.shift();
+        const node = this.diamondSprintList.shift()!;
         node.setPosition(_diamondPos);
         node.active = true;
         this.diamondSprintList.push(node);

@@ -3,7 +3,7 @@
  * Copyright (c) 2019 Xiamen Yaji Software Co.Ltd. All rights reserved.
  * Created by daisy on 2019/06/25.
  */
-import { _decorator, Component, Node, Touch, EventTouch, Vec3, LabelComponent, Prefab, ParticleSystemComponent, ModelComponent, AnimationComponent, CameraComponent, ParticleUtils } from "cc";
+import { _decorator, Component, Node, Touch, EventTouch, Vec3, Label, Prefab, ParticleSystem, Animation, Camera, ParticleUtils, find } from "cc";
 import { Constants } from "../data/constants";
 import { Board } from "./board";
 import { utils } from "../utils/utils";
@@ -16,16 +16,16 @@ const _tempPos = new Vec3();
 @ccclass("Ball")
 export class Ball extends Component {
     @property(Prefab)
-    diamondParticlePrefab: Prefab = null;
+    diamondParticlePrefab: Prefab = null!;
     @property({ type: Prefab })
-    scoreAniPrefab: Prefab = null;
+    scoreAniPrefab: Prefab = null!;
     // @property({ type: Prefab })
     // trail01Prefab: Prefab = null;
 
     @property({ type: Prefab })
-    trail02Prefab: Prefab = null;
+    trail02Prefab: Prefab = null!;
 
-    currBoard: Board = null; // 当前接触的板
+    currBoard: Board = null!; // 当前接触的板
 
     boardCount = 0;
     jumpState = Constants.BALL_JUMP_STATE.JUMPUP;
@@ -39,9 +39,9 @@ export class Ball extends Component {
     movePosX = 0; // 移动位置 x
     isJumpSpring = false; // 处于弹簧版弹跳状态
     boardGroupCount = 0;
-    trailNode: Node = null;
+    trailNode: Node | null = null;
 
-    _wpos = new Vec3();
+    _wPos = new Vec3();
 
 
     start () {
@@ -107,7 +107,7 @@ export class Ball extends Component {
                     // 超过当前跳板应该弹跳高度，开始下降
                     if (this.jumpState === Constants.BALL_JUMP_STATE.FALLDOWN) {
                         if (this.currJumpFrame > Constants.PLAYER_MAX_DOWN_FRAMES || this.currBoard.node.position.y - this.node.position.y > Constants.BOARD_GAP + Constants.BOARD_HEIGTH) {
-                            ParticleUtils.stop(this.trailNode);
+                            ParticleUtils.stop(this.trailNode!);
                             Constants.game.gameDie();
                             return;
                         }
@@ -289,17 +289,17 @@ export class Ball extends Component {
 
     // 界面上的弹跳分数
     showScore(score: number) {
-        const node = PoolManager.instance.getNode(this.scoreAniPrefab, cc.find('Canvas/resultUI'));
+        const node = PoolManager.instance.getNode(this.scoreAniPrefab, find('Canvas/resultUI')!);
         const pos = new Vec3();
-        const cameraComp = Constants.game.cameraCtrl.node.getComponent(CameraComponent);
-        this._wpos.set(this.node.worldPosition);
-        cameraComp.convertToUINode(this._wpos, cc.find('Canvas/resultUI'), pos);
+        const cameraComp = Constants.game.cameraCtrl.node.getComponent(Camera)!;
+        this._wPos.set(this.node.worldPosition);
+        cameraComp.convertToUINode(this._wPos, find('Canvas/resultUI')!, pos);
 
         pos.x += 50;
         node.setPosition(pos);
-        node.getComponentInChildren(LabelComponent).string = `+${score}`;
-        const animationComponent = node.getComponent(AnimationComponent);
-        animationComponent.once('finished', () => {
+        node.getComponentInChildren(Label)!.string = `+${score}`;
+        const animationComponent = node.getComponent(Animation)!;
+        animationComponent.once(Animation.EventType.FINISHED, () => {
             PoolManager.instance.putNode(node);
         });
         animationComponent.play();
@@ -401,7 +401,7 @@ export class Ball extends Component {
         const pos = this.currBoard.node.position.clone();
         pos.y += Constants.BALL_RADIUS + this.currBoard.getHeight() / 2 - .001;
         this.node.setPosition(pos);
-        this.node.eulerAngles = new cc.Vec3(0, 0, 0);
+        this.node.eulerAngles = new Vec3(0, 0, 0);
         this.currJumpFrame = 0;
         this.show();
         const y = this.currBoard.node.position.y + Constants.CAMERA_OFFSET_Y;
@@ -415,10 +415,10 @@ export class Ball extends Component {
         // @ts-ignore
         const diamondParticle = PoolManager.instance.getNode(this.diamondParticlePrefab, this.node.parent);
         diamondParticle.setPosition(pos);
-        const particleSystemComponent = diamondParticle.getComponent(ParticleSystemComponent);
-        particleSystemComponent.play();
+        const particleSystemComp = diamondParticle.getComponent(ParticleSystem)!;
+        particleSystemComp.play();
         const fun = () => {
-            if (!particleSystemComponent.isPlaying) {
+            if (!particleSystemComp.isPlaying) {
                 PoolManager.instance.putNode(diamondParticle);
                 this.unschedule(fun);
             }
@@ -427,11 +427,11 @@ export class Ball extends Component {
     }
 
     playTrail(){
-        ParticleUtils.play(this.trailNode);
+        ParticleUtils.play(this.trailNode!);
     }
 
     setTrailPos() {
         const pos = this.node.position;
-        this.trailNode.setPosition(pos.x, pos.y - 0.1, pos.z);
+        this.trailNode!.setPosition(pos.x, pos.y - 0.1, pos.z);
     }
 }

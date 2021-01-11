@@ -2,7 +2,7 @@
  * Copyright (c) 2019 Xiamen Yaji Software Co.Ltd. All rights reserved.
  * Created by daisy on 2019/06/25.
  */
-import { _decorator, Component, Node, Vec3, Prefab, instantiate, ModelComponent, Color } from "cc";
+import { _decorator, Component, Node, Vec3, Prefab, instantiate, MeshRenderer, Color } from "cc";
 import { Constants } from "../data/constants";
 import { Game } from "./game";
 import { utils } from '../utils/utils';
@@ -14,35 +14,35 @@ const _tempPos = new Vec3();
 export class Board extends Component {
 
     @property(Prefab)
-    diamondPrefab: Prefab = null;
+    diamondPrefab: Prefab = null!;
 
     @property({ type: Prefab })
-    centerPrefab: Prefab = null;
+    centerPrefab: Prefab = null!;
 
     @property({ type: Prefab })
-    wavePrefab: Prefab = null;
+    wavePrefab: Prefab = null!;
 
     // 弹簧片
     @property({ type: Prefab })
-    springTopPrefab: Prefab = null;
+    springTopPrefab: Prefab = null!;
 
     // 弹簧
     @property({ type: Prefab })
-    springHelixPrefab: Prefab = null;
+    springHelixPrefab: Prefab = null!;
 
     isActive = false;
     diamondList: Node[] = [];
     type = Constants.BOARD_TYPE.NORMAL;
-    wave: Node = null;
-    waveInner: Node = null;
+    wave: Node = null!;
+    waveInner: Node = null!;
     waveOriginScale = new Vec3();
     currWaveFrame = 0;
     currSpringFrame = 0;
     currBumpFrame = Constants.BOARD_BUMP_FRAMES;
-    springTop: Node = null;
-    springHelix: Node = null;
+    springTop: Node = null!;
+    springHelix: Node = null!;
     springHelixOriginScale = new Vec3();
-    center: Node = null;
+    center: Node = null!;
     isMovingRight = true;
     hasDiamond = false;
     isMoving = false;
@@ -50,7 +50,7 @@ export class Board extends Component {
     originScale = new Vec3();
     currDropFrame = Constants.BOARD_DROP_FRAMES;
 
-    _game: Game = null;
+    _game: Game = null!;
 
     onLoad() {
         this.originScale.set(this.node.scale);
@@ -156,7 +156,7 @@ export class Board extends Component {
     initDiamond() {
         for (let i = 0; i < 5; i++) {
             this.diamondList[i] = instantiate(this.diamondPrefab);
-            this.node.parent.addChild(this.diamondList[i]);
+            this.node.parent!.addChild(this.diamondList[i]);
             this.diamondList[i].active = false;
         }
     }
@@ -208,11 +208,11 @@ export class Board extends Component {
         this.springHelix = instantiate(this.springHelixPrefab);
         this.springHelixOriginScale = this.springHelix.getScale();
         this.springHelix.setScale(1.5, 1, 1.5);
-        this.node.parent.addChild(this.springHelix);
+        this.node.parent!.addChild(this.springHelix);
         this.springHelix.active = false;
         this.currSpringFrame = 2 * Constants.BOARD_SPRING_FRAMES;
         this.springTop = instantiate(this.springTopPrefab);
-        this.node.parent.addChild(this.springTop);
+        this.node.parent!.addChild(this.springTop);
         this.springTop.active = false;
         const pos = this.node.position.clone();
         pos.y += (Constants.BOARD_HEIGTH + Constants.SPRING_HEIGHT) / 2;
@@ -271,7 +271,7 @@ export class Board extends Component {
 
     initCenter() {
         this.center = instantiate(this.centerPrefab);
-        this.node.parent.addChild(this.center);
+        this.node.parent!.addChild(this.center);
         this.center.active = false;
     }
 
@@ -283,10 +283,10 @@ export class Board extends Component {
 
     initWave() {
         this.wave = instantiate(this.wavePrefab);
-        this.node.parent.addChild(this.wave);
+        this.node.parent!.addChild(this.wave);
         this.wave.active = false;
         this.waveInner = instantiate(this.wavePrefab);
-        this.node.parent.addChild(this.waveInner);
+        this.node.parent!.addChild(this.waveInner);
         this.waveInner.active = false;
         this.currWaveFrame = Constants.BOARD_WAVE_FRAMES;
         this.waveOriginScale.set(this.wave.scale);
@@ -300,11 +300,11 @@ export class Board extends Component {
             this.wave.setPosition(pos);
             this.wave.setScale(this.waveOriginScale.clone());
             this.wave.active = true;
-            const mat2 = this.wave.getComponent(ModelComponent).material;
+            const mat2 = this.wave.getComponent(MeshRenderer)!.material;
             // 初始化时保存以下变量
-            const pass = mat2.passes[0];
+            const pass = mat2!.passes[0];
             const hColor = pass.getHandle('color');
-            const color = cc.color('#dadada');
+            const color = new Color('#dadada');
             color.a = 127;
             pass.setUniform(hColor, color);
             this.waveInner.setPosition(pos);
@@ -319,9 +319,9 @@ export class Board extends Component {
                     this.waveInner.active = true;
                 }
 
-                const mat2 = this.waveInner.getComponent(ModelComponent).material;
+                const mat2 = this.waveInner.getComponent(MeshRenderer)!.material;
                 // 初始化时保存以下变量
-                const pass = mat2.passes[0];
+                const pass = mat2!.passes[0];
                 const hColor = pass.getHandle('color');
                 const color = new Color('#dadada');
                 color.a = 127 - Math.sin(this.currWaveFrame * 0.05) * 127;
@@ -331,9 +331,9 @@ export class Board extends Component {
                 this.waveInner.setScale(scale.x + Constants.BOARD_WAVE_INNER_STEP, scale.y, scale.z + Constants.BOARD_WAVE_INNER_STEP);
             }
 
-            const mat2 = this.wave.getComponent(ModelComponent).material;
+            const mat2 = this.wave.getComponent(MeshRenderer)!.material;
             // 初始化时保存以下变量
-            const pass = mat2.passes[0];
+            const pass = mat2!.passes[0];
             const hColor = pass.getHandle('color');
             const color = new Color('#dadada');
             color.a = 127 - Math.sin(this.currWaveFrame * 0.1) * 127;

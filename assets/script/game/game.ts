@@ -18,15 +18,15 @@ const { ccclass, property } = _decorator;
 @ccclass("Game")
 export class Game extends Component {
     @property(Prefab)
-    ballPref: Prefab = null;
+    ballPref: Prefab = null!;
     @property(BoardManager)
-    boardManager: BoardManager = null;
+    boardManager: BoardManager = null!;
     @property(CameraCtrl)
-    cameraCtrl: CameraCtrl = null;
+    cameraCtrl: CameraCtrl = null!;
     @property(UIManager)
-    uiManager: UIManager = null;
+    uiManager: UIManager = null!;
     @property(AudioManager)
-    audioManager: AudioManager = null;
+    audioManager: AudioManager = null!;
 
     get ball(){
         return this._ball;
@@ -35,7 +35,7 @@ export class Game extends Component {
     state = Constants.GAME_STATE.READY;
     score = 0;
     hasRevive = false;
-    _ball: Ball = null;
+    _ball: Ball = null!;
     __preload () {
         Constants.game = this;
     }
@@ -50,7 +50,7 @@ export class Game extends Component {
         const ball = instantiate(this.ballPref) as Node;
         // @ts-ignore
         ball.parent = this.node.parent;
-        this._ball = ball.getComponent(Ball);
+        this._ball = ball.getComponent(Ball)!;
     }
 
     start(){

@@ -9,9 +9,9 @@ const { ccclass, property } = _decorator;
 @ccclass("UIManager")
 export class UIManager extends Component {
     @property(Node)
-    pageStart: Node = null;
+    pageStart: Node = null!;
     @property(Node)
-    pageResult: Node = null;
+    pageResult: Node = null!;
 
     onLoad(){
         Constants.game.uiManager = this;

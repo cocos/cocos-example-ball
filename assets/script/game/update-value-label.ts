@@ -1,8 +1,8 @@
-import { _decorator, Component, Node, LabelComponent } from "cc";
+import { _decorator, Component, Node, Label } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("UpdateValueLabel")
-export class UpdateValueLabel extends LabelComponent {
+export class UpdateValueLabel extends Label {
     isPlaying = false;
     startVal = 0;
     endVal = 0;
