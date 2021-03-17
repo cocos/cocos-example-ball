@@ -78,6 +78,7 @@ export class Board extends Component {
         this.type = type;
         this.node.setPosition(pos);
         this.isMoving = false;
+        this.currDropFrame = Constants.BOARD_DROP_FRAMES;
         // 按概率来决定是否是移动板
         if (this.type === Constants.BOARD_TYPE.NORMAL || this.type === Constants.BOARD_TYPE.DROP || this.type === Constants.BOARD_TYPE.SPRING) {
             this.isMoving = this.setMove(level);
@@ -93,13 +94,7 @@ export class Board extends Component {
         }
 
         this.springTop.active = false;
-        if (this.type === Constants.BOARD_TYPE.SPRING) {
-            this.springHelix.active = true;
-            this.springTop.active = true;
-            this.setSpringPos();
-        }
-
-        if (this.type === Constants.BOARD_TYPE.SPRINT) {
+        if (this.type === Constants.BOARD_TYPE.SPRING || this.type === Constants.BOARD_TYPE.SPRINT) {
             this.springHelix.active = true;
             this.springTop.active = true;
             this.setSpringPos();
@@ -118,7 +113,8 @@ export class Board extends Component {
                 }
             } else if (this.type === Constants.BOARD_TYPE.NORMAL || this.type === Constants.BOARD_TYPE.DROP) {
                 if (Math.random() > .7) {
-                    this.diamondList[2].active = true;
+                    this.diamondList[2].active = Constants.game.initFirstBoard;
+                    Constants.game.initFirstBoard = true;
                     this.hasDiamond = true;
                 }
             }

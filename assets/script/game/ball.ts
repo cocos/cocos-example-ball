@@ -40,6 +40,7 @@ export class Ball extends Component {
     isJumpSpring = false; // 处于弹簧版弹跳状态
     boardGroupCount = 0;
     trailNode: Node | null = null;
+    timeScale = 0;
 
     _wPos = new Vec3();
 
@@ -64,6 +65,7 @@ export class Ball extends Component {
     }
 
     update(deltaTime: number) {
+        this.timeScale = Math.floor((deltaTime / Constants.normalDt) * 100) / 100;
         if (Constants.game.state === Constants.GAME_STATE.PLAYING) {
             const boardBox = Constants.game.boardManager;
             const boardList = boardBox.getBoardList();
@@ -79,7 +81,7 @@ export class Ball extends Component {
                     boardBox.clearDiamond();
                 }
 
-                this.currJumpFrame++;
+                this.currJumpFrame += this.timeScale;
                 const diamondSprintList = boardBox.getDiamondSprintList();
                 for (let i = 0; i < Constants.DIAMOND_NUM; i++) {
                     if (Math.abs(this.node.position.y - diamondSprintList[i].position.y) <= Constants.DIAMOND_SPRINT_SCORE_AREA && Math.abs(this.node.position.x - diamondSprintList[i].position.x) <= Constants.DIAMOND_SPRINT_SCORE_AREA) {
@@ -101,12 +103,12 @@ export class Ball extends Component {
                     const pos = this.node.position;
                     const boardPos = boardList[i].node.position;
                     if (Math.abs(pos.x - boardPos.x) <= boardList[i].getRadius() && Math.abs(pos.y - (boardPos.y + Constants.BOARD_HEIGTH)) <= Constants.DIAMOND_SCORE_AREA) {
-                        boardList[i].checkDiamond(this.node.position.x);
+                        boardList[i].checkDiamond(pos.x);
                     }
 
                     // 超过当前跳板应该弹跳高度，开始下降
                     if (this.jumpState === Constants.BALL_JUMP_STATE.FALLDOWN) {
-                        if (this.currJumpFrame > Constants.PLAYER_MAX_DOWN_FRAMES || this.currBoard.node.position.y - this.node.position.y > Constants.BOARD_GAP + Constants.BOARD_HEIGTH) {
+                        if (this.currJumpFrame > Constants.PLAYER_MAX_DOWN_FRAMES || (this.currBoard.node.position.y - pos.y) - (Constants.BOARD_GAP + Constants.BOARD_HEIGTH) > 0.001) {
                             ParticleUtils.stop(this.trailNode!);
                             Constants.game.gameDie();
                             return;
@@ -122,7 +124,7 @@ export class Ball extends Component {
                     }
                 }
 
-                this.currJumpFrame++;
+                this.currJumpFrame += this.timeScale;
 
                 if (this.jumpState === Constants.BALL_JUMP_STATE.JUMPUP) {
                     if (this.isJumpSpring && this.currJumpFrame >= Constants.BALL_JUMP_FRAMES_SPRING) {
@@ -333,30 +335,32 @@ export class Ball extends Component {
         // 跳跃状态处理
         if (this.jumpState === Constants.BALL_JUMP_STATE.JUMPUP) {
             if (this.isJumpSpring) {
-                _tempPos.y += Constants.BALL_JUMP_STEP_SPRING[Math.floor(this.currJumpFrame / 3)];
+                _tempPos.y += Constants.BALL_JUMP_STEP_SPRING[Math.floor(this.currJumpFrame / 3)] * this.timeScale;
             } else {
-                _tempPos.y += Constants.BALL_JUMP_STEP[Math.floor(this.currJumpFrame / 2)];
+                _tempPos.y += Constants.BALL_JUMP_STEP[Math.floor(this.currJumpFrame / 2)] * this.timeScale;
             }
             this.node.setPosition(_tempPos);
             // 下落状态处理
         } else if (this.jumpState === Constants.BALL_JUMP_STATE.FALLDOWN) {
             if (this.currBoard.type === Constants.BOARD_TYPE.SPRING) {
                 if (this.currJumpFrame < Constants.BALL_JUMP_FRAMES_SPRING) {
-                    _tempPos.y -= Constants.BALL_JUMP_STEP_SPRING[Math.floor((Constants.BALL_JUMP_FRAMES_SPRING - this.currJumpFrame - 1) / 3)]
+                    const step = Constants.BALL_JUMP_FRAMES_SPRING - this.currJumpFrame - 1;
+                    _tempPos.y -= Constants.BALL_JUMP_STEP_SPRING[Math.floor((step >= 0 ? step : 0)/ 3)] * this.timeScale;
                 } else {
-                    _tempPos.y -= Constants.BALL_JUMP_STEP_SPRING[0]
+                    _tempPos.y -= Constants.BALL_JUMP_STEP_SPRING[0] * this.timeScale;
                 }
             } else if (this.currJumpFrame < Constants.BALL_JUMP_FRAMES) {
-                _tempPos.y -= Constants.BALL_JUMP_STEP[Math.floor((Constants.BALL_JUMP_FRAMES - this.currJumpFrame - 1) / 2)];
+                const step = Constants.BALL_JUMP_FRAMES - this.currJumpFrame - 1;
+                _tempPos.y -= Constants.BALL_JUMP_STEP[Math.floor((step >= 0 ? step : 0) / 2)] * this.timeScale;
             } else {
-                _tempPos.y -= Constants.BALL_JUMP_STEP[0];
+                _tempPos.y -= Constants.BALL_JUMP_STEP[0] * this.timeScale;
             }
             this.node.setPosition(_tempPos);
             // 冲刺跳跃状态处理
         } else if (this.jumpState === Constants.BALL_JUMP_STATE.SPRINT) {
-            _tempPos.y += Constants.BALL_JUMP_STEP_SPRINT;
+            _tempPos.y += Constants.BALL_JUMP_STEP_SPRINT * this.timeScale;
             this.node.setPosition(_tempPos);
-            if (this.currJumpFrame >= Constants.DIAMOND_START_FRAME + 20 && this.currJumpFrame <= Constants.BALL_JUMP_FRAMES_SPRINT - 50 && this.currJumpFrame % Math.floor(Constants.DIAMOND_SPRINT_STEP_Y / Constants.BALL_JUMP_STEP_SPRINT) == 0) {
+            if (this.currJumpFrame >= Constants.DIAMOND_START_FRAME + 20 && this.currJumpFrame <= Constants.BALL_JUMP_FRAMES_SPRINT - 50 && Math.floor(this.currJumpFrame) % Math.floor(Constants.DIAMOND_SPRINT_STEP_Y / Constants.BALL_JUMP_STEP_SPRINT) == 0) {
                 Constants.game.boardManager.newDiamond()
             }
 

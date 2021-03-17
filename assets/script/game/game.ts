@@ -28,6 +28,9 @@ export class Game extends Component {
     @property(AudioManager)
     audioManager: AudioManager = null!;
 
+     // There is no diamond in first board
+    initFirstBoard = false;
+
     get ball(){
         return this._ball;
     }

@@ -166,4 +166,6 @@ export class Constants {
     static DIAMOND_SPRINT_STEP_Y = 4;
     static DIAMOND_START_FRAME = 6;
 
+    static normalDt = 1 / 60;
+
 }

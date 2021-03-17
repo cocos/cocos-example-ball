@@ -31,6 +31,7 @@ export class BoardManager extends Component {
     // 每次开始游戏板重置
     reset(){
         this._boardInsIdx = 0;
+        Constants.game.initFirstBoard = false;
         let pos = Constants.BOARD_INIT_POS.clone();
         let board: Board;
         const type = Constants.BOARD_TYPE.NORMAL;
@@ -66,18 +67,15 @@ export class BoardManager extends Component {
 
     // 游戏过程中新增板
     newBoard(newType: number, diffLevel: number) {
-        const pos = this.getNextPos(this._boardList[Constants.BOARD_NUM - 1], diffLevel, _tempPos);
-        const type = this._boardList[Constants.BOARD_NUM - 1].type;
+        const oldBoard = this._boardList[Constants.BOARD_NUM - 1];
+        const pos = this.getNextPos(oldBoard, diffLevel, _tempPos);
         const board = this._boardList.shift()!;
         if (newType === Constants.BOARD_TYPE.SPRINT) {
             this.diamondCenterX = pos.x;
             this.setDiamond(pos);
-        }
-
-        if (type === Constants.BOARD_TYPE.SPRINT) {
-            board.reset(newType, pos, 0)
+            board.reset(newType, pos, 0);
         } else {
-            board.reset(newType, pos, diffLevel)
+            board.reset(newType, pos, diffLevel);
         }
 
         board.name = this._boardInsIdx.toString();
